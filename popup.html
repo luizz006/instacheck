@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <title>InstaCheck</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">🔍</span>
+        <h1>InstaCheck</h1>
+      </div>
+      <p class="subtitle">Check who doesn't follow you back</p>
+    </header>
+
+    <!-- Initial Control Section -->
+    <section id="control-section" class="card">
+      <div class="safety-tip">
+        <span>🛡️</span>
+        <small>Make sure you are logged in to Instagram in this browser.</small>
+      </div>
+      <div class="delay-setting">
+        <label for="delay-select">Safety delay:</label>
+        <select id="delay-select" class="select-input">
+          <option value="2000" selected>2.0 seconds (Recommended)</option>
+          <option value="3000">3.0 seconds (Extra safe)</option>
+          <option value="1200">1.2 seconds (Faster)</option>
+        </select>
+      </div>
+
+      <!-- Following Cache Optimization Box -->
+      <div id="cache-box" class="cache-box hidden">
+        <div class="cache-info">
+          <span class="cache-icon">💾</span>
+          <div class="cache-text">
+            <strong id="cache-count">0 following cached</strong>
+            <small id="cache-date">Last scan: never</small>
+          </div>
+        </div>
+        <label class="checkbox-label">
+          <input type="checkbox" id="use-cached-following" checked>
+          <span>Use cached following (fetch followers only)</span>
+        </label>
+      </div>
+
+      <button id="btn-start" class="btn btn-primary">Start Scan</button>
+      <div id="error-message" class="error-box hidden"></div>
+    </section>
+
+    <!-- Progress Section (Initially hidden) -->
+    <section id="progress-section" class="card hidden">
+      <div class="progress-info">
+        <span id="progress-status">Preparing...</span>
+        <span id="progress-count">0 / 0</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div id="progress-bar-fill" class="progress-bar-fill"></div>
+      </div>
+      <p class="warning-text">⚠️ Do not close this window during the scan.</p>
+      <button id="btn-stop" class="btn btn-secondary">Stop</button>
+    </section>
+
+    <!-- Results Section (Initially hidden) -->
+    <section id="results-section" class="hidden">
+      <!-- Statistics -->
+      <div class="stats-grid">
+        <div class="stat-box">
+          <span class="stat-value" id="stat-following">0</span>
+          <span class="stat-label">Following</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-value" id="stat-followers">0</span>
+          <span class="stat-label">Followers</span>
+        </div>
+        <div class="stat-box highlight">
+          <span class="stat-value" id="stat-unfollowers">0</span>
+          <span class="stat-label">Not Following Back</span>
+        </div>
+      </div>
+
+      <!-- Filter and Actions -->
+      <div class="actions-bar">
+        <input type="text" id="search-input" placeholder="Search username..." class="input-search">
+        <button id="btn-export" class="btn btn-small" title="Export to CSV">📥 Export</button>
+        <button id="btn-reset" class="btn btn-small" title="New scan">🔄 New Scan</button>
+      </div>
+
+      <!-- Users List -->
+      <ul id="users-list" class="users-list"></ul>
+    </section>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
