@@ -1,6 +1,6 @@
 # 🔍 InstaCheck - Instagram Non-Followers Checker
 
-A lightweight, secure, and privacy-first browser extension (Manifest V3) that detects who doesn't follow you back on Instagram. 
+A lightweight, secure, and privacy-first browser extension (Manifest V3) that detects who doesn't follow you back on Instagram.
 
 Built to be **100% local, rate-limit safe, and completely free**—without paywalls, subscriptions, or external servers.
 
@@ -11,8 +11,10 @@ Built to be **100% local, rate-limit safe, and completely free**—without paywa
 - **🛡️ Anti-Ban & Rate-Limit Safe:** Configurable throttling (1.2s to 3.0s) with randomized jitter between requests to mimic natural browsing patterns.
 - **💾 Smart Following Cache:** Saves your following list locally. On subsequent scans, you can choose to fetch **followers only**, cutting API requests and scan time by **50%**.
 - **🔒 100% Private & Local:** Runs entirely within your browser session. Your credentials, cookies, and account data never leave your computer.
-- **🖼️ Profile Pictures Display:** Uses native Chrome DeclarativeNetRequest rules to bypass Instagram's CORP (*Cross-Origin-Resource-Policy*) restrictions safely.
+- **🖼️ Profile Pictures Display:** Uses native Chrome DeclarativeNetRequest rules to bypass Instagram's CORP (_Cross-Origin-Resource-Policy_) restrictions safely.
 - **⚡ Real-Time Search:** Instantly filter non-followers by username or full name.
+- **🗑️ Interactive List Management:** Dismiss or remove accounts directly from your results and local cache with real-time counter updates.
+- **🔗 Quick Profile Access:** One-click button to open and review any profile directly on Instagram in a new tab.
 - **📥 CSV Export:** One-click export of your non-followers list (Username, Full Name, Profile Link).
 - **🚫 Zero Paywalls:** Unlimited scans and full list view with no artificial limits.
 
@@ -25,22 +27,26 @@ Built to be **100% local, rate-limit safe, and completely free**—without paywa
 3. **Set Difference:** Compares both lists client-side:
    $$\text{Not Following Back} = \text{Following} \setminus \text{Followers}$$
 4. **Local Persistence:** Caches results in `chrome.storage.local` so you won't lose your data if the popup closes.
+5. **Interactive Management:** Removing or dismissing an account keeps your local list, counter, and following cache automatically in sync without needing a re-scan.
 
 ---
 
 ## 🚀 Installation Guide
 
 ### Prerequisites
+
 - Google Chrome, Microsoft Edge, Brave, or any Chromium-based browser.
 - An active Instagram session logged in on your browser.
 
 ### Step-by-Step Setup
 
 1. **Download / Clone this repository:**
+
    ```bash
    git clone https://github.com/luizz006/instacheck.git
    ```
-   *(Or download and extract the ZIP archive).*
+
+   _(Or download and extract the ZIP archive)._
 
 2. **Load the Extension into Chrome:**
    - Open Chrome and navigate to:

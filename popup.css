@@ -383,15 +383,39 @@ body::-webkit-scrollbar-thumb {
   text-overflow: ellipsis;
 }
 
+.btn-remove {
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: red;
+  padding: 4px 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-remove:hover {
+  background: rgba(246, 0, 0, 0.1);
+  border-color: red;
+}
+
+.btn-remove > svg {
+  width: 16px;
+  height: 16px;
+}
+
 .btn-profile-link {
-  font-size: 11px;
+  display: inline-block;
   color: var(--accent);
   text-decoration: none;
   padding: 4px 8px;
   border-radius: 4px;
   border: 1px solid var(--border);
   background: transparent;
-  white-space: nowrap;
+}
+
+.btn-profile-link > svg{
+  width: 16px;
+  height: 16px;
 }
 
 .btn-profile-link:hover {
